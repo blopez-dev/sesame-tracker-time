@@ -38,23 +38,17 @@ export default {
         />
       </a>
     </div>
-    <div class="relative hidden lg:flex items-center ml-auto">
-      <div class="flex items-center ml-6 pl-6 dark:border-slate-800">
-        <span>0:00</span>
-        <BaseButton Type="btn-primary" :onClick="clickOnClockIn"  class="font-bad arrow-right-btn">Entrar</BaseButton>
-      </div>
-      <div class="flex items-center ml-6 pl-6 dark:border-slate-800">
-        <template>
+    <div class="bg-grey-extra-light">
+      <div class="bg-grey-extra-light">
           <OfflineWorker><Menu/></OfflineWorker>
-          <OnlineWorker><<Menu/></OnlineWorker>
-        </template>
+<!--      <OnlineWorker  v-if="worker.workStatus === 'online'"><Menu/></OnlineWorker>-->
       </div>
-
-      <div></div>
     </div>
   </header>
 </template>
 
 <style scoped>
+.header-default__logo{
 
+}
 </style>

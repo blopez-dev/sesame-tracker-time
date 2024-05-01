@@ -1,7 +1,8 @@
 
 export const mappersStatusWorker = (res: {}) => {
-  const { workEntryIn, workEntryOut } = res.data.data[1]
-  const { firstName, lastName, id, workStatus } = res.data.data[0].employee
+  const lastStatus = res.data[0];
+  const { workEntryIn, workEntryOut } = lastStatus
+  const { firstName, lastName, id, workStatus } = lastStatus.employee
   return {
     workEntryIn,
     workEntryOut,

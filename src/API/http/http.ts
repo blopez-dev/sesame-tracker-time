@@ -1,7 +1,6 @@
-import axios from 'axios'
-import API_TOKEN from '../../../.env'
+import axios from 'axios';
 export const baseURL = 'https://api-test.sesametime.com/schedule/v1/work-entries'
-
+const API_TOKEN = '16e2f0694a311151c01aa0a131b94a5a3ad7f110e12c2d8f459fcbb158214f5f'
 const API_CALL = axios.create({
   baseURL,
   headers: {Authorization: `Bearer ${API_TOKEN}`},
