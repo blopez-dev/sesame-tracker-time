@@ -34,6 +34,8 @@
     "env.d.ts",
     "**/*",
     "**/*.vue",
-    "test.config.ts"
+    "test.config.ts",
+    "src/main.ts",
+    "src/**/*.vue",
   ]
 }

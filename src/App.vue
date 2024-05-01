@@ -1,11 +1,26 @@
-<script setup lang="ts">
+<script lang="ts">
+import LayoutDefault from '@/layouts/LayoutDefault.vue'
+import OnlineWorker from "@/components/OnlineWorker.vue";
+import OfflineWorker from "@/components/OfflineWorker.vue";
+import Menu from '@/components/DropdownMenu/DropDownMenu.vue'
 
+export default {
+  name: 'App',
+  components: {
+    LayoutDefault,
+    OnlineWorker,
+    OfflineWorker,
+    Menu
+  },
+}
 </script>
 
 <template>
-  <h2>Start project</h2>
+  <LayoutDefault>
+
+  </LayoutDefault>
 </template>
 
-<style scoped>
+<style>
 
 </style>
