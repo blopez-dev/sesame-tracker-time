@@ -31,10 +31,5 @@ export const useGetInfoWorker = defineStore('workerStore', {
       const formattedTime = formatTime(timeWorker)
       this.timerWithFormat = formattedTime
     },
-    startTracking({hours, minutes, seconds}){
-      this.timeWorker.hours = hours
-      this.timeWorker.minutes = minutes
-      this.timeWorker.seconds = seconds
-    }
     }
 })

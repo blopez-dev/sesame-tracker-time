@@ -40,7 +40,7 @@ export default {
     onMouseLeave () {
       this.timeoutMenu = setTimeout(() => {
         this.showMenu = false
-      }, 500)
+      }, 1000)
     }
   },
 }
