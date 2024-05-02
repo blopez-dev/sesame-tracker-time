@@ -23,3 +23,4 @@ To run the project, follow these steps:
 1. The project has been developed using the Vue.js library, utilizing the vue-cli tool to set up its structure. 
 2. Development has been carried out using version 3 of Vue.js, with the Composition API as the reference. 
 3. For state management, essential for tracking clock-ins, clock-outs, and worker data, Pinia has been chosen as the tool for setting up the store.
+4. I haven't used any router, as it's a single view, and there's no change of path happening.
