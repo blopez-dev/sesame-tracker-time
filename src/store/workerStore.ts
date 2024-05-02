@@ -30,10 +30,6 @@ export const useGetInfoWorker = defineStore('workerStore', {
       const timeWorker = calculateDifferenteBetweenTwoDates(new Date(workEntryIn?.date), new Date(workEntryOut?.date))
       const formattedTime = formatTime(timeWorker)
       this.timerWithFormat = formattedTime
-
     },
-    // setTimeWorkerWithFormat({ workEntryIn, workEntryOut }) {
-    //   this.timerWithFormat = calculateDifferenteBetweenTwoDates(new Date(workEntryIn?.date), new Date(workEntryOut?.date))
-    // },
     }
 })

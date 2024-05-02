@@ -26,9 +26,11 @@ export default {
 </script>
 
 <template>
-      <img src="" alt=""/>
-      <OfflineWorker v-if="worker.workStatus === 'offline'"><Menu /></OfflineWorker>
-      <OnlineWorker v-if="worker.workStatus === 'online'"><Menu /></OnlineWorker>
+  <div id="app" class="bg-grey-extra-light h-screen flex items-center justify-center flex-col gap-[20px]">
+    <img src="@/assets/img/spinner-svgrepo-com.svg" alt="is loading page" v-if="worker.workStatus === null"/>
+    <OfflineWorker v-if="worker.workStatus === 'offline'"><Menu /></OfflineWorker>
+    <OnlineWorker v-if="worker.workStatus === 'online'"><Menu /></OnlineWorker>
+  </div>
 </template>
 
 <style>

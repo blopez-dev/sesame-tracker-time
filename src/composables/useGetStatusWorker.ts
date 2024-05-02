@@ -9,6 +9,7 @@ export const useWorker = () => {
   const {
     worker,
     timerWithFormat,
+    timeWorker,
   } = storeToRefs(workerStore);
 
   const getInitialWorkerState = async () => {
@@ -26,12 +27,17 @@ export const useWorker = () => {
     await clockOut({employeeId: id, workEntryOut: { coordinates: {  latitude: 39.4697500, longitude: -0.3773900 }}})
     await getInitialWorkerState()
   }
+  const clockPause = () => {
+      clearInterval(this.intervalId)
+  }
 
   return {
     worker,
+    timeWorker,
     timerWithFormat,
     getInitialWorkerState,
     clockInWorker,
-    clockOutWorker
+    clockOutWorker,
+    clockPause
   }
 }
