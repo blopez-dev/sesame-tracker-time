@@ -5,11 +5,9 @@ import LayoutDefault from "@/layouts/LayoutDefault.vue";
 import OfflineWorker from "@/components/OfflineWorker.vue";
 import Menu from '@/components/DropdownMenu/DropDownMenu.vue'
 
-
 export default {
-  name: 'App',
+  name: 'LayoutDefault',
   components: {
-    LayoutDefault,
     OnlineWorker,
     OfflineWorker,
     Menu
@@ -28,11 +26,10 @@ export default {
 </script>
 
 <template>
-  <LayoutDefault>
-    <slot />
-  </LayoutDefault>
+  <div id="app" class="bg-grey-extra-light h-screen flex items-center justify-center flex-col gap-[20px]">
+    <img src="@/assets/img/spinner-svgrepo-com.svg" alt="is loading page" v-if="worker.workStatus === null"/>
+    <OfflineWorker v-if="worker.workStatus === 'offline'"><Menu /></OfflineWorker>
+    <OnlineWorker v-if="worker.workStatus === 'online'"><Menu /></OnlineWorker>
+  </div>
+  <slot />
 </template>
-
-<style>
-
-</style>

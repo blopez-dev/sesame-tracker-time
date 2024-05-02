@@ -12,6 +12,30 @@
     }
   ],
   "compilerOptions": {
-    "module": "NodeNext"
-  }
+    "baseUrl": "./",
+    "target": "esnext",
+    "module": "NodeNext",
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost"],
+    "moduleResolution": "node",
+    "isolatedModules": true,
+    "noImplicitAny": true,
+    "strict": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "skipLibCheck": true
+  },
+  "include": [
+    "vite.config.*",
+    "env.d.ts",
+    "**/*",
+    "**/*.vue",
+    "test.config.ts",
+    "src/main.ts",
+    "src/**/*.vue",
+  ]
 }
