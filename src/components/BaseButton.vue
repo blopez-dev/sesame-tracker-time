@@ -1,6 +1,6 @@
 <template>
   <button
-      class="rounded-[12px] text-white text-small w-[110px] h-[27px] box-border"
+      class="rounded-[15px] text-white text-small w-[100px] h-[25px] box-border"
       :class="buttonClasses[type]"
       @click="onClick"
   >
@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: 'custom-button',
+  name: 'BaseButton',
   props: {
     type: {
       type: String
