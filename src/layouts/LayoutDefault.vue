@@ -1,10 +1,35 @@
-<script setup lang="ts">
-import Header from '@/components/Header/Header.vue'
+<script lang="ts">
+import {useWorker} from "@/composables/useGetStatusWorker";
+import OnlineWorker from "@/components/OnlineWorker.vue";
+import LayoutDefault from "@/layouts/LayoutDefault.vue";
+import OfflineWorker from "@/components/OfflineWorker.vue";
+import Menu from '@/components/DropdownMenu/DropDownMenu.vue'
+
+export default {
+  name: 'LayoutDefault',
+  components: {
+    OnlineWorker,
+    OfflineWorker,
+    Menu
+  },
+  data() {
+    const { worker } = useWorker()
+    return { worker }
+
+  },
+  created() {
+    const { getInitialWorkerState } = useWorker()
+    getInitialWorkerState()
+  }
+
+}
 </script>
 
 <template>
-    <Header />
   <div id="app" class="bg-grey-extra-light h-screen flex items-center justify-center flex-col gap-[20px]">
-
+    <img src="@/assets/img/spinner-svgrepo-com.svg" alt="is loading page" v-if="worker.workStatus === null"/>
+    <OfflineWorker v-if="worker.workStatus === 'offline'"><Menu /></OfflineWorker>
+    <OnlineWorker v-if="worker.workStatus === 'online'"><Menu /></OnlineWorker>
+  </div>
   <slot />
 </template>

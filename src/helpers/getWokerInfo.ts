@@ -20,7 +20,6 @@ const clockIn = (params) => {
 }
 
 const clockOut = (params) => {
-  console.log(params)
   try {
     return http.post('/clock-out', params)
   } catch (err) {

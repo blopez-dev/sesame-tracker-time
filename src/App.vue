@@ -1,6 +1,7 @@
 <script lang="ts">
 import {useWorker} from "@/composables/useGetStatusWorker";
 import OnlineWorker from "@/components/OnlineWorker.vue";
+import LayoutDefault from "@/layouts/LayoutDefault.vue";
 import OfflineWorker from "@/components/OfflineWorker.vue";
 import Menu from '@/components/DropdownMenu/DropDownMenu.vue'
 
@@ -8,6 +9,7 @@ import Menu from '@/components/DropdownMenu/DropDownMenu.vue'
 export default {
   name: 'App',
   components: {
+    LayoutDefault,
     OnlineWorker,
     OfflineWorker,
     Menu
@@ -26,11 +28,9 @@ export default {
 </script>
 
 <template>
-  <div id="app" class="bg-grey-extra-light h-screen flex items-center justify-center flex-col gap-[20px]">
-    <img src="@/assets/img/spinner-svgrepo-com.svg" alt="is loading page" v-if="worker.workStatus === null"/>
-    <OfflineWorker v-if="worker.workStatus === 'offline'"><Menu /></OfflineWorker>
-    <OnlineWorker v-if="worker.workStatus === 'online'"><Menu /></OnlineWorker>
-  </div>
+  <LayoutDefault>
+    <slot />
+  </LayoutDefault>
 </template>
 
 <style>
