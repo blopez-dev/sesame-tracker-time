@@ -5,7 +5,10 @@
       <BaseButton :onClick="clickOnPause" type="neutral">Pausar</BaseButton>
       <BaseButton :onClick="clockOutWorker" type="danger">Salir</BaseButton>
       <p class="text-grey-light-1">|</p>
-      <img class="w-6 h-6 rounded-full" src="@/assets/img/avatar.png" alt={{worker.firstName}}>
+      <div class="flex relative items-end">
+        <img class="relative w-6 h-6 rounded-full"  src="@/assets/img/avatar.png" alt={{worker.firstName}}>
+        <img class="absolute w-2 h-2 rounded-full left-4"  src="@/assets/img/onlineStatus.svg" alt={{worker.workStatus}}>
+      </div>
       <p class="text-medium text-grey-dark">{{ worker.firstName }} {{ worker.lastName }}</p>
       <div @mouseover="onMouseOver" @mouseleave="onMouseLeave">
         <img src="@/assets/img/arrow_down.png" class="w-3 h-3" alt="arrow_down">
@@ -51,15 +54,9 @@ export default {
       }, 500)
     },
     clickOnPause () {
-      clearInterval(this.intervalId)
+      clearInterval( this.intervalId)
     },
-    startTracking () {
-      const { hours, minutes, seconds } = this.timeWorker
-      console.log(hours, minutes, seconds)
-      this.currentSeconds = seconds
-      this.currentMinutes = minutes
-      this.currentHours = hours
-    },
+
     calculateTimer () {
       this.currentSeconds = this.currentSeconds + 1
 
@@ -83,13 +80,7 @@ export default {
     }
   },
   created() {
-    this.startTracking()
     this.intervalId = setInterval(this.calculateTimer, 1000)
   }
 }
 </script>
-
-
-
-<style scoped>
-</style>

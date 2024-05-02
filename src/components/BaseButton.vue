@@ -1,6 +1,6 @@
 <template>
   <button
-      class="rounded-[12px] px-[38px] text-white text-small w-[110px] h-[27px] box-border"
+      class="rounded-[12px] text-white text-small w-[110px] h-[27px] box-border"
       :class="buttonClasses[type]"
       @click="onClick"
   >

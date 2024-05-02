@@ -14,7 +14,6 @@ export const useWorker = () => {
 
   const getInitialWorkerState = async () => {
      workerStore.loadWorker(await getCurrentWorkerStatus());
-     // workerStore.setTimeWorkerWithFormat(await getCurrentWorkerStatus())
   }
 
   const clockInWorker = async () => {
